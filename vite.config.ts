@@ -8,9 +8,8 @@ import { viteSingleFile } from "vite-plugin-singlefile";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// https://vite.dev/config/
 export default defineConfig({
-  // ⚠️ PASTIKAN NAMA INI SAMA PERSIS DENGAN NAMA REPOSITORY GITHUB ANDA
+  // ✅ PASTIKAN SAMA DENGAN NAMA REPO
   base: "/format-merapikan-text-tugas-scripsi-dll/",
   
   plugins: [react(), tailwindcss(), viteSingleFile()],
@@ -19,10 +18,5 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "src"),
     },
-  },
-  
-  build: {
-    outDir: "dist",
-    emptyOutDir: true,
   },
 });
