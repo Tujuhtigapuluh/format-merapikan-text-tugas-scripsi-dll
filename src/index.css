@@ -1,0 +1,339 @@
+/* index.css - VERSION 2.0 (Enhanced TOC Styles) */
+@import "tailwindcss";
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(99, 102, 241, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.6); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+.glow-effect {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ==============================
+   PREVIEW CONTENT - BASE STYLES
+   ============================== */
+
+.preview-content h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #1e293b;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.preview-content h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #1e293b;
+}
+
+.preview-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #334155;
+}
+
+.preview-content p {
+  margin-bottom: 0.75rem;
+  line-height: 1.8;
+  text-align: justify;
+  text-indent: 2rem;
+  color: #374151;
+}
+
+.preview-content p.no-indent {
+  text-indent: 0;
+}
+
+.preview-content ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.preview-content ol {
+  list-style-type: decimal;
+  padding-left: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.preview-content li {
+  margin-bottom: 0.35rem;
+  line-height: 1.7;
+  color: #374151;
+}
+
+.preview-content strong {
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.preview-content em {
+  font-style: italic;
+}
+
+.preview-content blockquote {
+  border-left: 4px solid #6366f1;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: #475569;
+  font-style: italic;
+  background: #f8fafc;
+  padding: 0.75rem 1rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.preview-content code {
+  background: #f1f5f9;
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.25rem;
+  font-family: 'Courier New', 'Consolas', monospace;
+  font-size: 0.9em;
+  color: #6366f1;
+}
+
+.preview-content pre {
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+  font-family: 'Courier New', 'Consolas', monospace;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.preview-content pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+.preview-content hr {
+  border: none;
+  border-top: 2px solid #e2e8f0;
+  margin: 1.5rem 0;
+}
+
+/* ==============================
+   ENHANCED TOC (DAFTAR ISI) STYLES
+   ============================== */
+
+.preview-content .toc-section {
+  margin: 0.75rem 0;
+  font-family: 'Times New Roman', 'Georgia', serif;
+}
+
+.preview-content .toc-entry {
+  display: flex;
+  align-items: baseline;
+  text-indent: 0;
+  margin: 0;
+  padding: 2px 0;
+  line-height: 2;
+  white-space: nowrap; /* Prevent wrapping for alignment */
+}
+
+.preview-content .toc-title {
+  flex-shrink: 0;
+  white-space: nowrap;
+  color: #1e293b;
+  font-weight: 400;
+  padding-right: 0.5em;
+}
+
+.preview-content .toc-bold .toc-title {
+  font-weight: 700;
+}
+
+/* Enhanced dot leader with better visual */
+.preview-content .toc-leader {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #64748b;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: 1.5px;
+  min-width: 20px;
+  position: relative;
+}
+
+/* Alternative: Use border-bottom for visual dots in print */
+.preview-content .toc-leader::after {
+  content: '';
+  position: absolute;
+  bottom: 0.3em;
+  left: 0;
+  right: 0;
+  border-bottom: 1px dotted #94a3b8;
+  height: 1px;
+}
+
+.preview-content .toc-page {
+  flex-shrink: 0;
+  text-align: right;
+  white-space: nowrap;
+  min-width: 2ch;
+  color: #1e293b;
+  font-variant-numeric: tabular-nums;
+  padding-left: 0.5em;
+  font-weight: 500;
+}
+
+/* TOC Indentation Levels */
+.preview-content .toc-indent-1 {
+  padding-left: 2em;
+}
+
+.preview-content .toc-indent-1 .toc-title {
+  font-weight: 400;
+}
+
+.preview-content .toc-indent-2 {
+  padding-left: 4em;
+}
+
+.preview-content .toc-indent-2 .toc-title {
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* ==============================
+   PPT STYLE OVERRIDES
+   ============================== */
+
+.preview-content.ppt-style h1 {
+  font-size: 1.75rem;
+  color: #4f46e5;
+  text-align: center;
+  border-bottom: 3px solid #6366f1;
+  padding-bottom: 0.5rem;
+  text-transform: none;
+}
+
+.preview-content.ppt-style h2 {
+  font-size: 1.35rem;
+  color: #4f46e5;
+  border-left: 4px solid #6366f1;
+  padding-left: 0.75rem;
+  text-transform: none;
+}
+
+.preview-content.ppt-style h3 {
+  color: #6366f1;
+}
+
+.preview-content.ppt-style p {
+  text-indent: 0;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.preview-content.ppt-style li {
+  font-size: 1rem;
+}
+
+.preview-content.ppt-style .toc-entry {
+  line-height: 1.8;
+}
+
+/* ==============================
+   MAKALAH STYLE OVERRIDES
+   ============================== */
+
+.preview-content.makalah-style h1 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.preview-content.makalah-style .toc-leader::after {
+  border-bottom-style: dashed;
+}
+
+/* ==============================
+   ARTIKEL STYLE OVERRIDES
+   ============================== */
+
+.preview-content.artikel-style h1 {
+  text-align: left;
+  text-transform: none;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+}
+
+.preview-content.artikel-style p {
+  text-indent: 0;
+  text-align: left;
+}
+
+.preview-content.artikel-style .toc-entry {
+  line-height: 1.6;
+}
+
+/* ==============================
+   PRINT OPTIMIZATION
+   ============================== */
+
+@media print {
+  .preview-content .toc-leader {
+    letter-spacing: 2px;
+  }
+  
+  .preview-content .toc-leader::after {
+    border-bottom: 1px dotted #000;
+  }
+  
+  .preview-content .toc-entry {
+    break-inside: avoid;
+  }
+}
