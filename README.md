@@ -77,7 +77,7 @@ Aplikasi ini secara otomatis mengenali dan memformat:
 
 ## 🚀 Demo Langsung
 
-### 👉 [Klik di sini untuk mencoba!](https://tujuhtigapuluh.github.io/format-merapikan-text-tugas-scripsi-dll/)
+### 👉 [Klik di sini untuk mencoba!](https://scared-scarlet-tuweei2f9w.edgeone.app/)
 
 **Cara pakai:**
 
